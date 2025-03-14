@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Link } from '@mui/material';
 import { NavBar } from '../components/NavBar';
-import questionImage from "../assets/question.jpg";
+// import questionImage from "../assets/question.jpg";
 import { Button } from '@mui/material';
 
 
@@ -63,11 +63,11 @@ function LandingPage() {
         
 
         <Box sx={{ flexShrink: 0 }}> 
-          <img 
+          {/* <img 
             src={questionImage} 
             alt="Question" 
             style={{ width: "300px", height: "auto", borderRadius: "6px" }} 
-          />
+          /> */}
         </Box>
         
       </Box>
