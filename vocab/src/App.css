@@ -1,0 +1,23 @@
+/* Add styles here */
+
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Share:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+body.dark {
+  background-color: #333;
+  color: white;
+}
+.container {
+  padding: 20px;
+}
+.card {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.text-area textarea {
+  width: 100%;
+}
+
+.Toastify__toast-container {
+  z-index: 9999 !important;
+}
