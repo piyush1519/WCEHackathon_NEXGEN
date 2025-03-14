@@ -7,6 +7,7 @@ import { loginButton as LoginButton } from '../components/Button';
 import ProgressGraph from '../components/ProgressGraph';
 import { fetchMistakes } from '../ApiCall/api';
 import ModalComponent from '../components/ModalComp';
+import Background from '../components/Background';
 
 
 function Progress() {
@@ -48,17 +49,7 @@ function Progress() {
 
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        background: 'linear-gradient(180deg, #FFF7D8 0%, #FDC32B 100%)',
-        padding: 1,
-      }}
-    >
+    <Background>
       <Box
         sx={{
           position: 'fixed',
@@ -124,7 +115,7 @@ function Progress() {
      
 
       
-    </Box>
+      </Background>
   );
 }
 

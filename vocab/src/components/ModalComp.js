@@ -13,16 +13,20 @@ const ModalComponent = ({ open, onClose, children, maxWidth = '600px' }) => (
   >
     <Box
       sx={{
+        margin: '5px',
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: '95%',
+        width: '100%',
+        maxHeight: '700px',
         maxWidth,
         bgcolor: '#F6F7FC',
         boxShadow: 24,
         borderRadius: '10px',
+        overflow: "scroll",
         p: 4,
+        gap: 6,
         zIndex: 1400, // Ensure the box content is above the modal backdrop
       }}
     >

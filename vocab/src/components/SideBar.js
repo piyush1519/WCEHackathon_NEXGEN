@@ -49,7 +49,7 @@ export function SideBar({ isVisible }) {
         left: isVisible ? '0' : '-300px',
         width: "300px",
         height: "calc(100vh - 60px)", // Full height minus the Navbar
-        background: "linear-gradient(180deg, #8C5F27 0%, #A97534 100%)",
+        background: "#0086C9",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

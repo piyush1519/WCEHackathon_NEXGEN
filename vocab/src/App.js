@@ -16,6 +16,7 @@ import Quiz from './Pages/Quiz';
 import { useContext } from 'react';
 import SynonymsAntonyms from './Pages/SynonymsAntonyms';
 import AlphabetPage from './Pages/AlphabetPage';
+import Background from './components/Background';
 
 function App() {
   const { isAuthenticated } = useContext(UserContext) || {} ; // Get authentication status
@@ -23,6 +24,7 @@ function App() {
   
 
   return (
+    <Background>
     <BrowserRouter>
       <UserProvider>
         <WordProvider>
@@ -45,6 +47,7 @@ function App() {
         </WordProvider>
       </UserProvider>
     </BrowserRouter>
+    </Background>
   );
 }
 

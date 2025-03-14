@@ -13,6 +13,7 @@ import {
   updateUserStreak,
 } from "../ApiCall/api";
 import ModalComponent from "../components/ModalComp";
+import Background from "../components/Background";
 
 function Dashboard() {
   const [expandedLevel, setExpandedLevel] = useState(null);
@@ -255,17 +256,7 @@ console.log(`emotion Selected is ${Emotion}`);
 
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        background: "linear-gradient(180deg, #F4F3FF 0%, #D9D6FE 100%)",
-        padding: 1,
-      }}
-    >
+    <Background>
       <Box
         sx={{
           position: "fixed",
@@ -294,12 +285,10 @@ console.log(`emotion Selected is ${Emotion}`);
             width: "100%",
             display: "flex",
             flexDirection: "row",
-            backgroundColor: "#EBE9FE",
             padding: "30px",
             gap: "30px",
             borderRadius: "15px",
             margin: "10px",
-            boxShadow: "0 6px 12px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Box
@@ -332,97 +321,84 @@ console.log(`emotion Selected is ${Emotion}`);
                     left: expandedLevel === index ? "-170px" : "-150px",
                     width: expandedLevel === index ? "270%" : "230%",
                     height: "90px",
-                    color: "#000",
+                    color: "#0086C9",
                     padding: "10px 20px",
                     borderRadius: expandedLevel === index ? "20px" : "20px",
                     fontWeight: "bold",
                     boxShadow: expandedLevel === index
                       ? "none"
-                      : "3px 3px 20px #462702, inset 30px 0px 16px rgba(255, 248, 248, 0.25), inset -20px -20px 40px #B5AC9E",
-                    background: "#F4F3FF",
+                      : "3px 3px 20px #84CAFF, inset 30px 0px 16px rgba(255, 248, 248, 0.25), inset -20px -20px 40px #D1E9FF",
+                    background: "#F6F0F0",
                     transition: "box-shadow 0.3s ease",
                   }}
                 >
 
                   {/* Sentiment analysis */}
                   <ModalComponent open={EmotionPopUp} onClose={handleEmotionPopUp}>
-  <Box
-    sx={{
-      padding: "20px",
-      backgroundColor: "#fff",
-      borderRadius: "8px",
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-      zIndex: 1000,
-    }}
-  >
-    {/* Check if Q exists before accessing its properties */}
-    {Q ? (
-      <>
-        <Typography>{Q.question}</Typography>
+                      <Box
+                        sx={{
+                          padding: "20px",
+                          backgroundColor: "#fff",
+                          borderRadius: "8px",
+                          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                          zIndex: 1000,
+                        }}
+                      >
+                        {/* Check if Q exists before accessing its properties */}
+                        {Q ? (
+                          <>
+                            <Typography>{Q.question}</Typography>
 
-        {/* Check if options exist and have values */}
-        {Q.options?.length > 0 ? (
-          Q.options.map((Emo, index) => {
-            const isSelected = Emotion === Emo;
+                            {/* Check if options exist and have values */}
+                            {Q.options?.length > 0 ? (
+                              Q.options.map((Emo, index) => {
+                                const isSelected = Emotion === Emo;
 
-            return (
-              <Box
-                key={index}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: 2,
-                }}
-              >
-                <OptionButton
-                  onClick={() => handleEmotionPopUp(Emo, index)}
-                  isSelected={isSelected}
-                  sx={{
-                    cursor: "pointer",
-                    width: "100%",
-                  }}
-                >
-                  {Emo}
-                </OptionButton>
-              </Box>
-            );
-          })
-        ) : (
-          <Typography>No options available</Typography>
-        )}
-      </>
-    ) : (
-      <Typography>Loading question...</Typography>
-    )}
+                                return (
+                                  <Box
+                                    key={index}
+                                    sx={{
+                                      display: "flex",
+                                      flexDirection: "column",
+                                      alignItems: "center",
+                                      gap: 2,
+                                    }}
+                                  >
+                                    <OptionButton
+                                      onClick={() => handleEmotionPopUp(Emo, index)}
+                                      isSelected={isSelected}
+                                      sx={{
+                                        cursor: "pointer",
+                                        width: "100%",
+                                      }}
+                                    >
+                                      {Emo}
+                                    </OptionButton>
+                                  </Box>
+                                );
+                              })
+                            ) : (
+                              <Typography>No options available</Typography>
+                            )}
+                          </>
+                        ) : (
+                          <Typography>Loading question...</Typography>
+                        )}
 
-    <button
-      onClick={handleEmotionPopUp}
-      style={{
-        padding: "10px 20px",
-        backgroundColor: "#FF6347",
-        color: "#fff",
-        border: "none",
-        borderRadius: "5px",
-        cursor: "pointer",
-        marginTop: "20px",
-      }}
-    >
-      Close
-    </button>
-  </Box>
-</ModalComponent>
+                      </Box>
+                    </ModalComponent>
 
                   <Typography
-                    variant="h4"
-                    sx={{
-                      fontWeight: "1000",
-                      color: "#462702",
-                      textAlign: "center",
-                    }}
-                  >
-                    Level {level}
-                  </Typography>
+                      variant="h4"
+                      sx={{
+                        fontWeight: "1000",
+                        color: "#2D31A6",
+                        textAlign: "center",
+                      }}
+                    >
+                      Level {level}
+                    </Typography>
+                    
                 </Button>
 
                 {expandedLevel === index && (
@@ -494,7 +470,7 @@ console.log(`emotion Selected is ${Emotion}`);
                           <Typography
                             sx={{
                               fontSize: "18px",
-                              color: "#462702",
+                              color: "#0086C9",
                               fontWeight: "1000",
                               minWidth: "40px",
                               textAlign: "right",
@@ -597,7 +573,7 @@ console.log(`emotion Selected is ${Emotion}`);
 
         </Box>
       </Box>
-    </Box>
+      </Background>
   );
 }
 

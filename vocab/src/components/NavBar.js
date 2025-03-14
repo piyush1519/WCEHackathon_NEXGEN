@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { loginButton as LoginButton } from './Button';
 import { circleButton as CircleButton } from './Button';
 import { useState } from 'react';
-import Logo from '../assets/Logo.jpeg';
+import Logo from '../assets/Logo.png';
 import menubar from '../assets/menubar.png'
 import streakIcon from '../assets/Streaktrack.png';
 import notifyIcon from '../assets/notifications.png';
@@ -27,9 +27,9 @@ export  function NavBar() {
         position: 'relative',
         width: '131%',
         height: '70px',
-        backgroundColor: '#27115F',
+        backgroundColor: '#0086C9',
         borderRadius: '0 0 20% 20%', 
-        boxShadow: '0px 8px 46px rgb(39, 17, 95)',
+        boxShadow: '0px 8px 46px EFF8FF',
         zIndex: 10,
       }}
     >
@@ -46,11 +46,13 @@ export  function NavBar() {
       >
         {/* Left: Logo */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <img
-            src={Logo}
-            alt="Logo"
-            style={{ height: '50px', width: "auto", marginRight: '10px' }}
-          />
+
+            <img
+              src={Logo}
+              alt="Logo"
+              style={{ height: '50px', width: "auto", marginRight: '10px' }}
+            />
+       
         </Box>
 
         <Box
@@ -69,12 +71,12 @@ export  function NavBar() {
             }}
           >
             <Typography
-              variant="h6"
+              variant="h4"
               component="span"
               sx={{
                 cursor: 'pointer',
                 '&:hover': { color: '#F6F7FC' },
-                fontSize: '1rem',
+                fontSize: '1.1rem',
                 '@media (max-width: 600px)': {
                   fontSize: '0.9rem',
                 },
@@ -88,7 +90,7 @@ export  function NavBar() {
               sx={{
                 cursor: 'pointer',
                 '&:hover': { color: '#F6F7FC' },
-                fontSize: '1rem',
+                fontSize: '1.1rem',
                 '@media (max-width: 600px)': {
                   fontSize: '0.9rem',
                 },
@@ -102,7 +104,7 @@ export  function NavBar() {
               sx={{
                 cursor: 'pointer',
                 '&:hover': { color: '#F6F7FC' },
-                fontSize: '1rem',
+                fontSize: '1.1rem',
                 '@media (max-width: 600px)': {
                   fontSize: '0.9rem',
                 },
@@ -116,7 +118,7 @@ export  function NavBar() {
               sx={{
                 cursor: 'pointer',
                 '&:hover': { color: '#F6F7FC' },
-                fontSize: '1rem',
+                fontSize: '1.1rem',
                 '@media (max-width: 600px)': {
                   fontSize: '0.9rem',
                 },
@@ -135,7 +137,7 @@ export  function NavBar() {
               backgroundColor: '#F6F7FC',
               boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.25), inset -6px -6px 10px #DBD8D8',
               borderRadius: '12px',
-              color: '#664419',
+              color: '#0086C9',
               fontWeight: 'bold',
               padding: '10px 20px',
               '&:hover': {
@@ -230,9 +232,9 @@ export function NavBarTwo({ toggleSidebar }) {
         position: 'relative',
         width: '131%',
         height: '70px',
-        backgroundColor: '#27115F',
+        backgroundColor: '#0086C9',
         borderRadius: '0 0 20% 20%',
-        boxShadow: '0px 8px 46px rgba(83, 52, 2, 0.6)',
+        boxShadow: '0px 8px 46px EFF8FF',
         zIndex: 10,
       }}
     >
@@ -255,11 +257,13 @@ export function NavBarTwo({ toggleSidebar }) {
             alt="menubar"
             style={{ height: '30px', width: 'auto', marginRight: '10px' }}
           />
-          <img
-            src={Logo}
-            alt="Logo"
-            style={{ height: '50px', width: 'auto', marginRight: '10px' }}
-          />
+          <a href='\dashboard'>
+            <img
+              src={Logo}
+              alt="Logo"
+              style={{ height: '50px', width: 'auto', marginRight: '10px' }}
+            />
+          </a>
         </Box>
 
         {/* Right: Icons */}
@@ -267,7 +271,7 @@ export function NavBarTwo({ toggleSidebar }) {
           {/* Streak Button */}
           <LoginButton
             onClick={handleStreakToggle}
-            sx={{ gap: '5px' }}
+            sx={{ gap: '5px' , color: "#2D31A6"}}
           >
             Streak {`(${streak})`} 
             <img
@@ -303,13 +307,13 @@ export function NavBarTwo({ toggleSidebar }) {
                   id="streak-popup-title"
                   variant="h6"
                   component="h2"
-                  sx={{ color: '#664419', fontWeight: 'bold', mb: 2 }}
+                  sx={{ color: '#0086C9', fontWeight: 'bold', mb: 2 }}
                 >
                   Streak
                 </Typography>
                 <Typography
                   id="streak-popup-description"
-                  sx={{ mb: 2, color: '#664419' }}
+                  sx={{ mb: 2, color: '#0086C9' }}
                 >
                   Your streak shows strength, keep rocking it! You've earned 500 Lingo points so far.
                 </Typography>
@@ -321,7 +325,7 @@ export function NavBarTwo({ toggleSidebar }) {
                     mb: 3,
                   }}
                 >
-                  <Typography sx={{ fontWeight: 'bold', color: '#664419' }}>Day 10</Typography>
+                  <Typography sx={{ fontWeight: 'bold', color: '#0086C9' }}>Day 10</Typography>
                   <Box
                     sx={{
                       display: 'flex',
@@ -342,7 +346,7 @@ export function NavBarTwo({ toggleSidebar }) {
                   </Box>
                 </Box>
 
-                <Typography sx={{ mb: 2, fontWeight: 'bold', color: '#664419' }}>
+                <Typography sx={{ mb: 2, fontWeight: 'bold', color: '#0086C9' }}>
                   Time for the Question of the Day!
                 </Typography>
                 <Typography sx={{ mb: 2, color: '#664419' }}>

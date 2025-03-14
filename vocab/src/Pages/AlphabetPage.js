@@ -5,6 +5,7 @@ import { SideBar } from '../components/SideBar';
 import { Box, Card, CardContent, Grid2, Typography, IconButton } from '@mui/material';
 import { VolumeUp } from '@mui/icons-material'; 
 import { WordContext } from "../ApiCall/WordContext";
+import Background from '../components/Background';
 
 function AlphabetPage() {
   const { userId, motherTongue } = useContext(UserContext);
@@ -64,17 +65,7 @@ function AlphabetPage() {
   };
 
   return (
-    <Box
-  sx={{
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "flex-start", 
-    minHeight: "100vh", 
-    background: "linear-gradient(180deg, #FFF7D8 0%, #FDC32B 100%)",
-    paddingTop: 8, 
-  }}
->
+ <Background>
   <Box
     sx={{
       position: "fixed",
@@ -101,9 +92,10 @@ function AlphabetPage() {
         <Grid2 item xs={6} sm={4} md={2} key={uppercase}>
           <Card 
             sx={{ 
+              marginTop: '20px',
               height: '100%',
               background: "#F7F7F7",
-              border: "5px solid #664419",
+              border: "5px solid #0086C9",
               boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
               borderRadius: "10px",
             }}
@@ -114,7 +106,7 @@ function AlphabetPage() {
               <Typography variant="body1" sx={{ fontFamily: '"Share", sans-serif' }}>{translated}</Typography>
               <IconButton 
                 onClick={() => playAudio(uppercase)} 
-                sx={{ marginTop: 1, color: "#FDC32B" }}
+                sx={{ marginTop: 1, color: "#84CAFF" }}
               >
                 <VolumeUp />
               </IconButton>
@@ -124,7 +116,7 @@ function AlphabetPage() {
       ))}
     </Grid2>
   </Box>
-</Box>
+</Background>
 
   );
 }

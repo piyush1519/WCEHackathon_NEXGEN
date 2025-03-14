@@ -76,7 +76,6 @@ function SignUp() {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-        background: "linear-gradient(180deg, #FFF7D8 0%, #FDC32B 100%)",
       }}
     >
       {/* NavBar */}
@@ -110,7 +109,6 @@ function SignUp() {
           sx={{
             width: { xs: "100%", sm: "800px" },
             backgroundColor: "#fff",
-
             padding: 4,
             borderRadius: 3,
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
@@ -121,7 +119,7 @@ function SignUp() {
         >
           {/* Logo and Heading */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <img src="logo-url.png" alt="Logo" style={{ width: "40px", height: "40px" }} />
+            <img src="minilogo.png" alt="Logo" style={{ width: "40px", height: "40px" }} />
             <Typography variant="h5" component="h1" sx={{ fontWeight: "bold" }}>
               Hi Buddies
             </Typography>
@@ -249,7 +247,7 @@ function SignUp() {
             color="primary"
             fullWidth
             sx={{
-              background: "#664419",
+              background: "#0086C9",
               padding: 2,
               fontWeight: "bold",
               textTransform: "uppercase",

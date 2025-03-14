@@ -7,9 +7,9 @@ export const loginButton = ({ children, onClick }) => {
     onClick={onClick}
       sx={{
               backgroundColor: '#F6F7FC',
-              boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.25), inset -6px -6px 10px #DBD8D8',
+              boxShadow: '6px 6px 12px 84CAFF, inset -6px -6px 10px #DBD8D8',
               borderRadius: '50px',
-              color: '#664419',
+              color: '#2D31A6',
               fontWeight: 'bold',
               padding: '10px 20px',
               '&:hover': {
@@ -31,7 +31,7 @@ export const circleButton = ({ children, onClick }) => {
         backgroundColor: '#F6F7FC',
         boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.25), inset -6px -6px 10px #DBD8D8',
         borderRadius: '50%', // Makes it a circle
-        color: '#664419',
+        color: '#2D31A6s',
         fontWeight: 'bold',
         padding: 0, // Remove extra padding for proper image fit
         width: '50px', // Ensure width and height are equal
@@ -57,10 +57,10 @@ export const optionButton = ({ children, onClick ,isSelected}) => {
       onClick={onClick}
       sx={{
         width: "350px",
-        background: isSelected ? "#ffffff" : "#F3CA7F",
-        boxShadow: "inset -6.50529px 6.50529px 19.5159px #AB5223, inset 6.50529px -6.50529px 19.5159px #A35830",
+        background: isSelected ? "#ffffff" : "#F0F9FF",
+        boxShadow: "inset -1px 1px 20px #0086C9, inset 1px -1px 20px #0086C9",
         borderRadius: "25px",
-        color: '#664419',
+        color: '#0086C9',
         fontWeight: 'bold',
         padding: 0, // Remove extra padding for proper image fit
         

@@ -11,6 +11,7 @@ import { loginButton as LoginButton } from '../components/Button';
 import ModalComponent from "../components/ModalComp";
 import { NavBarTwo } from "../components/NavBar";
 import { SideBar } from "../components/SideBar";
+import Background from "../components/Background";
 
 const Quiz = () => {
     const { module, level, Emotion } = useParams();
@@ -44,12 +45,9 @@ const Quiz = () => {
 
     useEffect(() => {
       const EmotionArray = ["Angry", "Sad", "Happy", "Anxeity"];
-      console.log(`Emotion :${Emotion}`);
       
       const Emo = EmotionArray[Emotion %4] ;
-      console.log(`Emo ${Emo}`);
-      
-      
+
         const getQuestions = async () => {
             try {
                 const fetchedQuestions = await fetchQuestions(level, module, Emo );
@@ -257,17 +255,7 @@ const Quiz = () => {
     
 
     return (
-        <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-          background: "linear-gradient(180deg, #FFF7D8 0%, #FDC32B 100%)",
-          
-        }}
-      >
+        <Background>
         <Box
           sx={{
             position: "fixed",
@@ -297,7 +285,7 @@ const Quiz = () => {
           
           <Box
             sx={{
-              background: "#BA8A30",
+              background: "#fff",
               width: "40%",
               padding: "5px 20px",
               borderRadius: "8px 30px 30px 8px",
@@ -307,7 +295,7 @@ const Quiz = () => {
           >
             <Typography
               variant="h4"
-              sx={{ marginBottom: "10px", fontWeight: 500, color: "#ffffff" }}
+              sx={{ marginBottom: "10px", fontWeight: 500, color: "#0086C9" }}
             >
               Module {module}
             </Typography>
@@ -315,7 +303,7 @@ const Quiz = () => {
       
           <Box
             sx={{
-              background: "#BA8A30",
+              background: "#fff",
               width: "20%",
               padding: "15px 20px",
               display: "flex",
@@ -327,7 +315,7 @@ const Quiz = () => {
           >
             <Typography
               variant="h5"
-              sx={{ fontWeight: 500, color: "#ffffff", textAlign: "center" }}
+              sx={{ fontWeight: 500, color: "#0086C9", textAlign: "center" }}
             >
               Score: {score}/{questions.length}
             </Typography>
@@ -342,7 +330,7 @@ const Quiz = () => {
             justifyContent: "center",
             width: "80%",
             maxWidth: "1200px",
-            background: "#FFF1C5",
+            background: "#D1E9FF",
             borderRadius: "12px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             padding: 3,
@@ -459,7 +447,7 @@ const Quiz = () => {
                     disabled={!selectedAnswer}
                     sx={{
                       height: "70px",
-                      backgroundColor: !selectedAnswer ? "#D3D3D3" : "#4CAF50",
+                      backgroundColor: !selectedAnswer ? "#D3D3D3" : "#D1E9FF",
                     }}
                   >
                     Submit
@@ -598,7 +586,7 @@ const Quiz = () => {
             </Box>
           )}
         </Box>
-      </Box>
+        </Background>
       
 
 

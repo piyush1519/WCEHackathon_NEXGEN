@@ -7,6 +7,7 @@ import { NavBar } from "../components/NavBar";
 
 
 import { UserContext } from "../ApiCall/userContext";
+import Background from "../components/Background";
 
 function Login() {
 
@@ -80,17 +81,7 @@ function Login() {
   return (
   
     
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        background: "linear-gradient(180deg, #FFF7D8 0%, #FDC32B 100%)",
-        padding: 1,
-      }}
-    >
+    <Background>
 
     <Box
         sx={{
@@ -110,7 +101,7 @@ function Login() {
         sx={{
           width: { xs: "90%", sm: "400px" },
           backgroundColor: "#fff",
-          marginTop: 10,
+          marginTop: 5,
           padding: 4,
           borderRadius: 3,
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
@@ -122,7 +113,7 @@ function Login() {
 
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <img src="logo-url.png" alt="Logo" style={{ width: "40px", height: "40px" }} />
+          <img src="minilogo.png" alt="Logo" style={{ width: "40px", height: "40px" }} />
           <Typography variant="h5" component="h1" align="left" sx={{ fontWeight: "bold", marginBottom: 2 }}>
             Hi Buddies
           </Typography>
@@ -172,7 +163,7 @@ function Login() {
           color="primary"
           fullWidth
           sx={{
-            background: "#664419",
+            background: "#0086C9",
             padding: 2,
             fontWeight: "bold",
             textTransform: "uppercase",
@@ -188,7 +179,7 @@ function Login() {
 
         <ToastContainer />
       </Box>
-    </Box>
+      </Background>
    
   );
 }
