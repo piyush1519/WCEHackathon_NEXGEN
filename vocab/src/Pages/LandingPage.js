@@ -4,6 +4,7 @@ import { NavBar } from '../components/NavBar';
 // import questionImage from "../assets/question.jpg";
 import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from 'react-router-dom';
 
 const theme = createTheme({
   typography: {
@@ -11,9 +12,17 @@ const theme = createTheme({
   },
 });
 
+
 function LandingPage() {
+
+  const navigate  = useNavigate();
+
   const myStyle = {
     width: '100%'
+  }
+
+  const handleSignUp = () =>{
+    navigate('/signup')
   }
   return (
     <ThemeProvider theme={theme}>
@@ -162,6 +171,7 @@ function LandingPage() {
                 alignContent: "center",
                 justifySelf: "center",
               }}
+              onClick={() => handleSignUp()}
               >
                 Sign Up
               </Button>
