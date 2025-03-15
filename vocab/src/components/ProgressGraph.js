@@ -59,7 +59,7 @@ function ProgressGraph() {
 
   return (
     <Box sx={{ width: '80%', height: '400px' }}>
-      <h3>User Progress</h3>
+     
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={progressData}

@@ -11,6 +11,7 @@ const Background = ({ children }) => {
         flexDirection: "column",
           alignItems: "center",
           justifyContent: "center"
+          
         }}
     >
       {children}

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../ApiCall/userContext";
 import { SideBar } from '../components/SideBar';
 import { optionButton as OptionButton } from '../components/Button';
+import { loginButton as LoginButton } from '../components/Button';
 import axios from "axios";
 import {
   fetchDailyQuestion,
@@ -14,6 +15,7 @@ import {
 } from "../ApiCall/api";
 import ModalComponent from "../components/ModalComp";
 import Background from "../components/Background";
+import ProgressGraph from "../components/ProgressGraph";
 
 function Dashboard() {
   const [expandedLevel, setExpandedLevel] = useState(null);
@@ -254,6 +256,9 @@ const Q= EmoQuestions[R];
   
 console.log(`emotion Selected is ${Emotion}`);
 
+const redirectToProgress = () =>{
+  navigate("/progress")
+}
 
   return (
     <Background>
@@ -264,6 +269,7 @@ console.log(`emotion Selected is ${Emotion}`);
           left: 0,
           width: "75%",
           zIndex: 10,
+
         }}
       >
         <NavBarTwo toggleSidebar={toggleSidebar} />
@@ -289,6 +295,7 @@ console.log(`emotion Selected is ${Emotion}`);
             gap: "30px",
             borderRadius: "15px",
             margin: "10px",
+            maxHeight: "80vh"
           }}
         >
           <Box
@@ -300,7 +307,7 @@ console.log(`emotion Selected is ${Emotion}`);
               flexDirection: "column",
               alignItems: "center",
               gap: "30px",
-              overflowY: "auto", 
+              overflowY: "scroll", 
               scrollBehavior: "smooth",
               "&::-webkit-scrollbar": {
                 display: "none",
@@ -338,16 +345,18 @@ console.log(`emotion Selected is ${Emotion}`);
                       <Box
                         sx={{
                           padding: "20px",
-                          backgroundColor: "#fff",
                           borderRadius: "8px",
                           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                           zIndex: 1000,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 4
                         }}
                       >
                         {/* Check if Q exists before accessing its properties */}
                         {Q ? (
                           <>
-                            <Typography>{Q.question}</Typography>
+                            <Typography variant="h5" sx={{color: "#1849A9"}}>{Q.question}</Typography>
 
                             {/* Check if options exist and have values */}
                             {Q.options?.length > 0 ? (
@@ -488,87 +497,46 @@ console.log(`emotion Selected is ${Emotion}`);
 
           <Box
             sx={{
-              background: "#FFFFFF",
+              background: "#EFF8FF",
               width: "40%",
               padding: "20px",
               borderRadius: "15px",
               display: "flex",
               flexDirection: "column",
-              gap: "20px",
+              gap: "10px",
               '@media (max-width: 700px)': {
                 display: 'none',
               },
             }}
           >
-            {dailyQuestionAttempted ? (
-              <Typography
-                variant="h6"
+              <Box
                 sx={{
-                  fontWeight: "bold",
-                  color: "#FF6F00",
-                  textAlign: "center",
+                  padding: 4,
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >   
+                <Typography variant="h6" sx={{ color: "#1849A9"}} onClick={() => {redirectToProgress()}}>Progress</Typography>
+                 <ProgressGraph/>
+              </Box>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent:"center"
                 }}
               >
-                Attempted
-              </Typography>
-            ) : (
-              <>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: "bold",
-                    color: "#FF6F00",
-                    textAlign: "center",
-                  }}
-                >
-                  {questionText}
-                </Typography>
-
-                <Box
-                  sx={{
-                    backgroundColor: "#FFFFFF",
-                    borderRadius: "8px",
-                    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
-                    padding: "15px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                >
-                  {options.map((option, index) => (
-                    <Box
-                      key={index}
-                      sx={{
-                        backgroundColor:
-                          selectedOption === option
-                            ? option === correctAnswer
-                              ? "#A4DE8C" //green
-                              : "#FFB5B5" //red
-                            : "#FFE9C7", // default color
-                        padding: "10px",
-                        borderRadius: "5px",
-                        cursor: "pointer",
-                        "&:hover": {
-                          backgroundColor: "#FDC32B",
-                          color: "#FFFFFF",
-                        },
-                      }}
-                      onClick={() => handleOptionClick(option)}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "14px",
-                          fontWeight: "bold",
-                          textAlign: "center",
-                        }}
-                      >
-                        {option}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-              </>
-            )}
+                  <Button
+                    sx={{
+                      background: "#0086C9",
+                      width: "450px",
+                      height: "60px",
+                      padding: "5px",
+                      color: "#fff"
+                    }}
+                  >
+                    <Typography variant="h5" onClick={() => {redirectToProgress()}}>Explore The Mistakes</Typography></Button>
+              </Box>
           </Box>
 
         </Box>

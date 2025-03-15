@@ -7,6 +7,7 @@ const ModalComponent = ({ open, onClose, children, maxWidth = '600px' }) => (
     onClose={onClose}
     aria-labelledby="modal-title"
     aria-describedby="modal-description"
+    shouldCloseOnOverlayClick={false}
     sx={{
       zIndex: 1300, // Ensure modal appears above other elements
     }}
