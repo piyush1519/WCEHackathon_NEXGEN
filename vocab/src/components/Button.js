@@ -13,7 +13,7 @@ export const loginButton = ({ children, onClick }) => {
               fontWeight: 'bold',
               padding: '10px 20px',
               '&:hover': {
-                backgroundColor: '#e0e0e0',
+                backgroundColor: '#7CD4FD',
               },
       }}
     >

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { handleFailure, handleSuccess } from "../components/util";
 import { NavBar } from "../components/NavBar";
+import  minilogo from "../assets/minilogo.png";
 
 function SignUp() {
   const [signUpInfo, setSignUpInfo] = useState({
@@ -119,9 +120,9 @@ function SignUp() {
         >
           {/* Logo and Heading */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <img src="minilogo.png" alt="Logo" style={{ width: "40px", height: "40px" }} />
+            <img src={minilogo} alt="Logo" style={{ width: "40px", height: "40px" }} />
             <Typography variant="h5" component="h1" sx={{ fontWeight: "bold" }}>
-              Hi Buddies
+              Hi Buddy
             </Typography>
           </Box>
           <Typography variant="h6" component="h2" sx={{ fontWeight: "bold", marginBottom: 3 }}>

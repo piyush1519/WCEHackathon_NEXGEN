@@ -447,7 +447,7 @@ const Quiz = () => {
                     disabled={!selectedAnswer}
                     sx={{
                       height: "70px",
-                      backgroundColor: !selectedAnswer ? "#D3D3D3" : "#D1E9FF",
+                      backgroundColor: !selectedAnswer ? "#7CD4FD" : "#D1E9FF",
                     }}
                   >
                     Submit

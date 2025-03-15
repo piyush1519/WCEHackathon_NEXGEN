@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { handleFailure, handleSuccess } from '../components/util';
 import { NavBar } from "../components/NavBar";
-
+import ml from "../assets/minilogo.png";
 
 import { UserContext } from "../ApiCall/userContext";
 import Background from "../components/Background";
@@ -113,9 +113,9 @@ function Login() {
 
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <img src="minilogo.png" alt="Logo" style={{ width: "40px", height: "40px" }} />
+          <img src={ml} alt="Logo" style={{ width: "40px", height: "40px" }} />
           <Typography variant="h5" component="h1" align="left" sx={{ fontWeight: "bold", marginBottom: 2 }}>
-            Hi Buddies
+            Hi Buddy
           </Typography>
         </Box>
 

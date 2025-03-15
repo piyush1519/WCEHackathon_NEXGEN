@@ -4,6 +4,7 @@ import { NavBarTwo } from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../ApiCall/userContext";
 import { SideBar } from '../components/SideBar';
+import avatar from '../assets/adcard.jpg'
 import { optionButton as OptionButton } from '../components/Button';
 import { loginButton as LoginButton } from '../components/Button';
 import axios from "axios";
@@ -49,9 +50,9 @@ function Dashboard() {
   const { userId } = useContext(UserContext);
 
   const minimumModules = [
-    { color: "#664419", shadow: "2px 2px 8px #161101, inset 3px 3px 14px #BA8A30, inset -12px -12px 45px #2B1A02" },
-    { color: "#B37212", shadow: "2px 2px 8px #574002, inset 3px 3px 8px #8F6921, inset -12px -12px 45px #85530A" },
-    { color: "#FCF4D5", shadow: "2px 2px 8px #574002, inset 3px 3px 8px #DCBD82, inset -12px -12px 45px #B37212" },
+    { color: "#53B1FD", shadow: "2px 2px 8px #175CD3, inset 3px 3px 14px #84CAFF, inset -12px -12px 45px #2E90FA" },
+    { color: "#1570EF", shadow: "2px 2px 8px #1F235B, inset 3px 3px 8px #0BA5EC, inset -12px -12px 45px #2E90FA" },
+    { color: "#194185", shadow: "2px 2px 8px #062C41, inset 3px 3px 8px #1849A9, inset -12px -12px 45px #1849A9" },
   ];
 
   const shuffleOptions = (questionData) => {
@@ -277,6 +278,8 @@ const redirectToProgress = () =>{
 
       <SideBar isVisible={isSidebarVisible} />
 
+      
+
       <Box
         sx={{
           width: "85%",
@@ -286,6 +289,23 @@ const redirectToProgress = () =>{
           height: "calc(100vh - 80px)",
         }}
       >
+        <Box 
+          sx={{
+            padding: "20px",
+            color: "blue",
+            width: "20%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={avatar}
+            alt="Logo"
+            style={{ height: '210px', width: 'auto', marginRight: '10px' }}
+          />
+        </Box>
+
         <Box
           sx={{
             width: "100%",

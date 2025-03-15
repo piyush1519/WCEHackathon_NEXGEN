@@ -54,7 +54,7 @@ function ProgressGraph() {
   }
 
   if (error) {
-    return <Box>Error: {error}</Box>;
+    return ;
   }
 
   return (
